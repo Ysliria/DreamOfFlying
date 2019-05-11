@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ecranttitre2.jpg-c9ae027c09d6520a1924d6379a8abe89.stex"
+path="res://.import/selecthelico.png-467c906988c45f1f8646e60f67ec94fa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/ecranttitre2.jpg"
-dest_files=[ "res://.import/ecranttitre2.jpg-c9ae027c09d6520a1924d6379a8abe89.stex" ]
+source_file="res://image/ecranTitre/selecthelico.png"
+dest_files=[ "res://.import/selecthelico.png-467c906988c45f1f8646e60f67ec94fa.stex" ]
 
 [params]
 
