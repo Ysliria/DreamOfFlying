@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://Obstacle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://parallax.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ParallaxFirstPlan.tscn" type="PackedScene" id=4]
+
+[node name="Main" type="Node"]
+script = ExtResource( 1 )
+Mur = ExtResource( 2 )
+
+[node name="parallax" parent="." instance=ExtResource( 3 )]
+position = Vector2( -71.7495, 33.4832 )
+z_as_relative = false
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="MurTimer" type="Timer" parent="."]
+wait_time = 4.5
+autostart = true
+
+[node name="StartPosition" type="Position2D" parent="."]
+position = Vector2( 139, 286 )
+
+[node name="parallaxFirstPlan" parent="." instance=ExtResource( 4 )]
+position = Vector2( -2664.3, -1081.03 )
+z_as_relative = false
+
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="timeout" from="MurTimer" to="." method="_on_MurTimer_timeout"]
