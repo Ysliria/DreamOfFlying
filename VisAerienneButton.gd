@@ -4,7 +4,6 @@ extends TextureButton
 func _ready():
 	pass
 
-func _on_VisAerienneButton_pressed():
+func _on_VisAerienne_pressed():
 	GameSingleton.machineChoice = "vis"
 	get_tree().change_scene("res://Main.tscn")
-

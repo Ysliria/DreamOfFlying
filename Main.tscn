@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Obstacle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://parallax.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ParallaxFirstPlan.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Audio/Vexento - Travelin'.wav" type="AudioStream" id=5]
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -29,6 +30,10 @@ position = Vector2( 139, 286 )
 [node name="parallaxFirstPlan" parent="." instance=ExtResource( 4 )]
 position = Vector2( -2664.3, -1081.03 )
 z_as_relative = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
 
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]

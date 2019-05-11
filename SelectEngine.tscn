@@ -1,118 +1,38 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://image/paysage/BG.png" type="Texture" id=1]
-[ext_resource path="res://Fonts/TtimSplitter/Future TimeSplitters.otf" type="DynamicFontData" id=2]
-[ext_resource path="res://image/sprite2_0.png" type="Texture" id=3]
-[ext_resource path="res://image/sprite2_1.png" type="Texture" id=4]
-[ext_resource path="res://MachineVolanteButton.gd" type="Script" id=5]
-[ext_resource path="res://RegularRobotoDynFont.tres" type="DynamicFont" id=6]
-[ext_resource path="res://image/machine/helicochoice.png" type="Texture" id=7]
-[ext_resource path="res://VisAerienneButton.gd" type="Script" id=8]
-
-[sub_resource type="DynamicFont" id=1]
-size = 70
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 70
-font_data = ExtResource( 2 )
+[ext_resource path="res://image/ecranTitre/ecrantitrebg.png" type="Texture" id=1]
+[ext_resource path="res://image/ecranTitre/selectplane.png" type="Texture" id=2]
+[ext_resource path="res://MachineVolanteButton.gd" type="Script" id=3]
+[ext_resource path="res://image/ecranTitre/selcthelico.png" type="Texture" id=4]
+[ext_resource path="res://VisAerienneButton.gd" type="Script" id=5]
+[ext_resource path="res://Audio/Vexento - Dream Catcher.wav" type="AudioStream" id=6]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="BackgroundEcranSelection" type="TextureRect" parent="."]
 margin_right = 1281.0
 margin_bottom = 1024.0
 texture = ExtResource( 1 )
 expand = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
-margin_right = 1279.0
-margin_bottom = 1025.0
-alignment = 1
+[node name="MachineVolante" type="TextureButton" parent="BackgroundEcranSelection"]
+margin_right = 640.0
+margin_bottom = 1024.0
+texture_normal = ExtResource( 2 )
+expand = true
+script = ExtResource( 3 )
 
-[node name="MachineVolanteContainer" type="VBoxContainer" parent="TextureRect/HBoxContainer"]
-margin_right = 680.0
-margin_bottom = 1025.0
-size_flags_horizontal = 7
-size_flags_vertical = 5
-alignment = 1
-
-[node name="MachineVolanteLabel" type="Label" parent="TextureRect/HBoxContainer/MachineVolanteContainer"]
-margin_top = 206.0
-margin_right = 680.0
-margin_bottom = 280.0
-size_flags_horizontal = 7
-size_flags_vertical = 6
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Ornithoptere"
-align = 1
-
-[node name="MachineVolanteButton" type="TextureButton" parent="TextureRect/HBoxContainer/MachineVolanteContainer"]
-margin_left = 307.0
-margin_top = 491.0
-margin_right = 372.0
-margin_bottom = 534.0
-size_flags_horizontal = 6
-size_flags_vertical = 4
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 4 )
+[node name="VisAerienne" type="TextureButton" parent="BackgroundEcranSelection"]
+margin_left = 642.228
+margin_top = 0.734558
+margin_right = 1282.23
+margin_bottom = 1024.73
+texture_normal = ExtResource( 4 )
+expand = true
 script = ExtResource( 5 )
 
-[node name="MachineVolanteDescription2" type="Label" parent="TextureRect/HBoxContainer/MachineVolanteContainer"]
-margin_top = 538.0
-margin_right = 680.0
-margin_bottom = 1025.0
-size_flags_horizontal = 7
-size_flags_vertical = 7
-custom_fonts/font = ExtResource( 6 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Chaque pression du bouton fait monter la machine.
-La pesanteur la fait redescendre.
-"
-align = 1
-valign = 1
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
 
-[node name="VisAerienneContainer" type="VBoxContainer" parent="TextureRect/HBoxContainer"]
-margin_left = 684.0
-margin_right = 1279.0
-margin_bottom = 1025.0
-size_flags_horizontal = 7
-size_flags_vertical = 5
-alignment = 1
-
-[node name="VisAerienneLabel" type="Label" parent="TextureRect/HBoxContainer/VisAerienneContainer"]
-margin_top = 181.0
-margin_right = 595.0
-margin_bottom = 255.0
-size_flags_horizontal = 7
-size_flags_vertical = 6
-custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Vis Aerienne"
-align = 1
-
-[node name="VisAerienneButton" type="TextureButton" parent="TextureRect/HBoxContainer/VisAerienneContainer"]
-margin_left = 222.0
-margin_top = 440.0
-margin_right = 372.0
-margin_bottom = 584.0
-size_flags_horizontal = 6
-size_flags_vertical = 4
-texture_normal = ExtResource( 7 )
-script = ExtResource( 8 )
-
-[node name="VisAerienneDescription" type="Label" parent="TextureRect/HBoxContainer/VisAerienneContainer"]
-margin_top = 588.0
-margin_right = 595.0
-margin_bottom = 1025.0
-size_flags_horizontal = 7
-size_flags_vertical = 7
-custom_fonts/font = ExtResource( 6 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Utiliser le joystick pour monter et descendre."
-align = 1
-valign = 1
-
-[connection signal="pressed" from="TextureRect/HBoxContainer/MachineVolanteContainer/MachineVolanteButton" to="TextureRect/HBoxContainer/MachineVolanteContainer/MachineVolanteButton" method="_on_MachineVolanteButton_pressed"]
-[connection signal="pressed" from="TextureRect/HBoxContainer/VisAerienneContainer/VisAerienneButton" to="TextureRect/HBoxContainer/VisAerienneContainer/VisAerienneButton" method="_on_VisAerienneButton_pressed"]
+[connection signal="pressed" from="BackgroundEcranSelection/MachineVolante" to="BackgroundEcranSelection/MachineVolante" method="_on_MachineVolante_pressed"]
+[connection signal="pressed" from="BackgroundEcranSelection/VisAerienne" to="BackgroundEcranSelection/VisAerienne" method="_on_VisAerienne_pressed"]
