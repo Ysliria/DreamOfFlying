@@ -19,7 +19,7 @@ func _process(delta):
 	vector -= 1
 
 	if(touchesActives):
-		if(Input.is_action_just_pressed("ui_select")):
+		if(Input.is_action_just_pressed("ui_jump")):
 			vector = 10
 			$AnimatedSprite.play()
 			velocity = velocity.normalized() * SPEED

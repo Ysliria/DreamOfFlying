@@ -1,18 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Obstacle.gd" type="Script" id=1]
 [ext_resource path="res://image/obstacles/obstacle3.png" type="Texture" id=2]
+[ext_resource path="res://image/obstacles/obstacle5.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 29.9639, 892.14 )
+extents = Vector2( 29.9639, 889.139 )
 
 [node name="RigidBody2D" type="RigidBody2D"]
 position = Vector2( 1351.91, 538.751 )
 gravity_scale = 0.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="ObstacleHaut" type="Sprite" parent="."]
 position = Vector2( -8.08691, -778.293 )
@@ -23,10 +21,10 @@ offset = Vector2( 8.67712, -297.507 )
 region_rect = Rect2( 150, 30, 130, 30 )
 
 [node name="ObstacleBas" type="Sprite" parent="."]
-position = Vector2( -8.70703, 1171.42 )
-scale = Vector2( 0.3, 0.9 )
+position = Vector2( -16.3359, 1092.65 )
+scale = Vector2( 0.733314, 1.26724 )
 z_as_relative = false
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 offset = Vector2( 8.67712, -297.507 )
 region_rect = Rect2( 150, 30, 130, 30 )
 

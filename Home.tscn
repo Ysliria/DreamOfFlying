@@ -21,13 +21,20 @@ script = ExtResource( 2 )
 stream = ExtResource( 3 )
 autoplay = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Credits" type="Label" parent="."]
 margin_left = 2.0
 margin_top = 902.0
 margin_right = 1278.0
 margin_bottom = 953.0
 custom_fonts/font = ExtResource( 4 )
-text = "Musique : Vexento  -  Design : Cédric Thomas  -  Développement : Laetitia Perriot & Mickaël Auger"
+text = "Musique : Vexento  -  Design : Cédric Thomas & Dinara Mukpayeva  -  Développement : Laetitia Perriot & Mickaël Auger"
 align = 1
 valign = 1
+
+[node name="Version" type="Label" parent="."]
+margin_left = 594.484
+margin_top = -57.1357
+margin_right = 705.484
+margin_bottom = -43.1357
+text = "Version Beta-test"
 

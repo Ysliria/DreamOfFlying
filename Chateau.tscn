@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://image/paysage/ClosLuce.png" type="Texture" id=1]
+
+[node name="Chateau" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1636.69, 794.03 )
+scale = Vector2( 0.343091, 0.343091 )
+texture = ExtResource( 1 )
+

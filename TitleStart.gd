@@ -5,5 +5,5 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-    if Input.is_action_pressed("ui_accept"):
+    if Input.is_action_pressed("ui_coin"):
         get_tree().change_scene("res://SelectEngine.tscn")
