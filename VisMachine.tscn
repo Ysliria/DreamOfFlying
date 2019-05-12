@@ -41,6 +41,7 @@ position = Vector2( -1.07542, -1.0324 )
 scale = Vector2( 1.43016, 1.43016 )
 frames = SubResource( 2 )
 animation = "helico"
+frame = 1
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
