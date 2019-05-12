@@ -9,16 +9,18 @@ func _ready():
 	match GameSingleton.machineChoice:
 		"vis" : 
 			player = preload("res://VisMachine.tscn").instance()
-			player.position = $StartPosition.position
-			add_child(player)
 		"aile" :
 			player = preload("res://AileMachine.tscn").instance()
-			player.position = $StartPosition.position
-			add_child(player)
-			
+		
+	player.position = $StartPosition.position
+	player.connect("hit", self, "_on_player_hit")
+	add_child(player)
+
+func _on_player_hit():
+	Game_over()
+
 func _process(delta):
 	if Input.is_action_pressed("ui_cancel"):
-		print("--> echap = menu pause")
 		var m = preload("res://MenuPause.tscn").instance()
 		add_child( m )
 
@@ -30,16 +32,15 @@ func new_game():
 func Game_over():
 	$MurTimer.stop()
 	$ScoreTimer.stop()
-	
-	print("Perdu")
+
+	get_tree().change_scene("res://GameOver.tscn")
 
 func _on_MurTimer_timeout():
 	var mur = Mur.instance()
 	add_child(mur)
 
 func _on_Joueur_touchSol():
-	pass#print("Crash")
-	$MurTimer.stop()
+	Game_over()
 
 func _on_StartTimer_timeout():
 	$ScoreTimer.start()

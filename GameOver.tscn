@@ -14,7 +14,9 @@ margin_bottom = 1020.0
 texture = ExtResource( 2 )
 expand = true
 
-[node name="RestartButton" type="TextureButton" parent="."]
+[node name="Menu" type="Node2D" parent="TextureRect"]
+
+[node name="RestartButton" type="TextureButton" parent="TextureRect/Menu"]
 margin_left = 444.334
 margin_top = 422.856
 margin_right = 844.334
@@ -22,7 +24,7 @@ margin_bottom = 582.856
 texture_normal = ExtResource( 3 )
 expand = true
 
-[node name="ExitButton" type="TextureButton" parent="."]
+[node name="ExitButton" type="TextureButton" parent="TextureRect/Menu"]
 margin_left = 446.844
 margin_top = 584.832
 margin_right = 846.844

@@ -8,7 +8,7 @@ var lst = []
 signal selected_item(value)
 
 func _ready():
-	lst = $TextureRect/Menu.get_children()
+	lst = $BackgroundEcranSelection.get_children()
 	
 	for i in range(1, lst.size() ):
 		lst[i].modulate.a = 0.3
@@ -19,9 +19,9 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		on_valid_menu()
 		
-	if Input.is_action_just_pressed("ui_down"):
+	if Input.is_action_just_pressed("ui_right"):
 		nxt_pos += 1
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("ui_left"):
 		nxt_pos -= 1
 		
 	nxt_pos = clamp(nxt_pos, 0, max_pos)
@@ -41,8 +41,10 @@ func change_pos(new_pos):
 func on_valid_menu():
 	match cur_pos:
 		0:
-			get_tree().change_scene("res://SelectEngine.tscn")
+			GameSingleton.machineChoice = "aile"
+			get_tree().change_scene("res://Main.tscn")
 		1:
-			get_tree().quit()
+			GameSingleton.machineChoice = "vis"
+			get_tree().change_scene("res://Main.tscn")
 		
 	queue_free()
