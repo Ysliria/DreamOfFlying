@@ -15,6 +15,12 @@ func _ready():
 			player = preload("res://AileMachine.tscn").instance()
 			player.position = $StartPosition.position
 			add_child(player)
+			
+func _process(delta):
+	if Input.is_action_pressed("ui_cancel"):
+		print("--> echap = menu pause")
+		var m = preload("res://MenuPause.tscn").instance()
+		add_child( m )
 
 func new_game():
 	score = 0

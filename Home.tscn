@@ -1,17 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://image/ecranTitre/ecrantitre1280x1024_Plan de travail 1.png" type="Texture" id=1]
 [ext_resource path="res://TitleStart.gd" type="Script" id=2]
 [ext_resource path="res://Audio/Vexento - Dream Catcher.wav" type="AudioStream" id=3]
+[ext_resource path="res://RegularRobotoDynFont.tres" type="DynamicFont" id=4]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 2.21606, 72.0222 )
 
 [node name="TitleScreen" type="TextureRect" parent="."]
-margin_left = -48.0
-margin_top = -345.0
-margin_right = 1283.0
-margin_bottom = 955.0
+margin_left = -1.15173
+margin_top = -70.1011
+margin_right = 1276.85
+margin_bottom = 950.899
 texture = ExtResource( 1 )
 expand = true
 script = ExtResource( 2 )
@@ -19,4 +20,14 @@ script = ExtResource( 2 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 autoplay = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 2.0
+margin_top = 902.0
+margin_right = 1278.0
+margin_bottom = 953.0
+custom_fonts/font = ExtResource( 4 )
+text = "Musique : Vexento  -  Design : Cédric Thomas  -  Développement : Laetitia Perriot & Mickaël Auger"
+align = 1
+valign = 1
 
