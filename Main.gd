@@ -11,9 +11,10 @@ func _ready():
 			player = preload("res://VisMachine.tscn").instance()
 		"aile" :
 			player = preload("res://AileMachine.tscn").instance()
-		
+
 	player.position = $StartPosition.position
 	player.connect("hit", self, "_on_player_hit")
+
 	add_child(player)
 
 func _on_player_hit():

@@ -1,53 +1,45 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Obstacle.gd" type="Script" id=1]
+[ext_resource path="res://image/obstacles/obstacle3.png" type="Texture" id=2]
 
-[sub_resource type="Gradient" id=1]
-offsets = PoolRealArray( 0.0239521, 0.976048, 1 )
-colors = PoolColorArray( 0.5, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1 )
-
-[sub_resource type="GradientTexture" id=2]
-gradient = SubResource( 1 )
-
-[sub_resource type="GradientTexture" id=3]
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 29.0125, 280.078 )
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 29.1142, 253.289 )
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 29.9639, 892.14 )
 
 [node name="RigidBody2D" type="RigidBody2D"]
-position = Vector2( 1329.94, 505.973 )
+position = Vector2( 1351.91, 538.751 )
 gravity_scale = 0.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1.72314, -349.671 )
-scale = Vector2( 0.0288074, 493.166 )
+[node name="ObstacleHaut" type="Sprite" parent="."]
+position = Vector2( -8.08691, -778.293 )
+scale = Vector2( 0.3, 0.9 )
 z_as_relative = false
-texture = SubResource( 2 )
-normal_map = SubResource( 3 )
+texture = ExtResource( 2 )
+offset = Vector2( 8.67712, -297.507 )
 region_rect = Rect2( 150, 30, 130, 30 )
 
-[node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 1.72314, 374.342 )
-scale = Vector2( 0.0288074, 493.166 )
-texture = SubResource( 2 )
-normal_map = SubResource( 3 )
+[node name="ObstacleBas" type="Sprite" parent="."]
+position = Vector2( -8.70703, 1171.42 )
+scale = Vector2( 0.3, 0.9 )
+z_as_relative = false
+texture = ExtResource( 2 )
+offset = Vector2( 8.67712, -297.507 )
 region_rect = Rect2( 150, 30, 130, 30 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1.64333, -383.574 )
-shape = SubResource( 4 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 2.11472, 381.232 )
-shape = SubResource( 5 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 5.57898, 2.17505 )
+scale = Vector2( -2.93075, -2.61244 )
+
+[node name="CollisionObstacleHaut" type="CollisionShape2D" parent="."]
+position = Vector2( -10.2384, -977.596 )
+shape = SubResource( 1 )
+
+[node name="CollisionObstacleBas" type="CollisionShape2D" parent="."]
+position = Vector2( -8.38501, 955.469 )
+shape = SubResource( 1 )
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

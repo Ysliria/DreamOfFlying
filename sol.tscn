@@ -86,6 +86,8 @@ position = Vector2( 888.349, 722.909 )
 scale = Vector2( 0.845495, 0.790914 )
 texture = ExtResource( 5 )
 
+[node name="Sprite5" type="Sprite" parent="Node2D2"]
+
 [node name="forme" type="CollisionShape2D" parent="."]
 position = Vector2( 1273.91, 906.78 )
 shape = SubResource( 1 )
