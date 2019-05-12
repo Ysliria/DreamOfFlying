@@ -1,36 +1,35 @@
-extends Node2D
+extends KinematicBody2D
 
 var vector = 0
 var screen_size
 var touchesActives = true
-var velocity = Vector2()
-
-export (int) var SPEED
+var velocity = Vector2(0,0)
 
 signal hit
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	velocity = Vector2()
-	position.y -= vector
-
 	if(touchesActives):
 		if(Input.is_action_pressed("ui_up")):
-			vector += 1
+			velocity.y = -10
 			$AnimatedSprite.play()
-			velocity = velocity.normalized()
+#			velocity = velocity.normalized()
 			
-		if(Input.is_action_pressed("ui_down")):
-			vector -= 1
+		elif(Input.is_action_pressed("ui_down")):
+			velocity.y = 10
 			$AnimatedSprite.play()
-			velocity = velocity.normalized()
-
-	position += velocity * delta
-	position.y = clamp(position.y, 0, screen_size.y)
+#			velocity = velocity.normalized()
+		else:
+			velocity.y = 0
+	
+	move_and_collide(velocity, false, true)
 
 func _on_Joueur_body_entered(body):
+	queue_free() # Player disappears after being hit.
+	emit_signal("hit")
+
+func _on_Area2D_body_entered(body):
 	queue_free() # Player disappears after being hit.
 	emit_signal("hit")
