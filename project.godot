@@ -17,6 +17,7 @@ _global_script_class_icons={
 
 config/name="flappytest"
 run/main_scene="res://Home.tscn"
+boot_splash/image="res://image/ecranTitre/splashscreenDoF.png"
 config/icon="res://icon.png"
 
 [autoload]
