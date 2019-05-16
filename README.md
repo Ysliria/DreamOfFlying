@@ -6,3 +6,15 @@ Pour jouer au jeu il suffit de télécharger l'exécutable présent dans le doss
 
 ## Résolution
 Le jeu a été conçu pour une résolution de 1280*1024.
+
+## Equipe
+### Designers
+- Cédric THOMAS
+- Dinara MUKPAYEVA
+### Développeurs
+- Mickaël AUGER
+- Laetitia PERRIOT
+
+## Crédits
+### Musiques
+- VEXENTO
